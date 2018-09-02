@@ -9,14 +9,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { VoteFormComponent } from './vote-form/vote-form.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { HomePanelComponent } from './home-panel/home-panel.component';
 
+const appRoutes: Routes = [
+  { path: 'admin-panel', component: AdminPanelComponent },
+  { path: 'home', component:  HomePanelComponent},
+  { path: '', redirectTo : '/home', pathMatch:'full'}
+  /* These are examples  */
+  // { path: 'hero/:id',      component: HeroDetailComponent },
+  // {
+  //   path: 'heroes',
+  //   component: HeroListComponent,
+  //   data: { title: 'Heroes List' }
+  // },
+  // { path: '',
+  //   redirectTo: '/heroes',
+  //   pathMatch: 'full'
+  // },
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VoteFormComponent
+    VoteFormComponent,
+    AdminPanelComponent,
+    HomePanelComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +47,11 @@ import { RouterModule, Router } from '@angular/router';
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
