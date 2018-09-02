@@ -1,7 +1,7 @@
 
 <h1>Vote Form</h1>
 <div class="main-container">
-  <form #voteForm = "ngForm">
+  <form (ngSubmit) = "onSubmit()" #voteForm = "ngForm">
   <mat-form-field>
     <input matInput placeholder="Name" required [(ngModel)]="model.name" name = "name">
     <!-- TODO REMOVE {{model.name}} -->
@@ -20,6 +20,7 @@
     </mat-select>
   <!-- TODO REMOVE{{model.type}} -->
   </mat-form-field>
+
+<button type ="submit" class="btn btn-primary" mat-stroked-button (click)="postData(model.name,model.subject,model.type); voteForm.reset()">Submit</button>
 </form>
-<button type ="submit" mat-stroked-button (click)="postData(model.name,model.subject,model.type)">Submit</button>
 </div>
