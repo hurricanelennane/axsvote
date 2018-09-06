@@ -3,6 +3,10 @@ export class Vote {
         //public id:number,
         public name:string,
         public subject:string,
-        public type:string
+        public type:string,
+        public response:string
     ){}
+    public isResponse = function(){
+        return this.type == "Response";
+    }
 }

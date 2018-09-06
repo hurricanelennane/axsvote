@@ -1,3 +1,9 @@
-<p>
-  home-panel works!
-</p>
+<div style="text-align:center">
+<!-- <div><button class="admin-nav" (click)="adminRoute()">Admin Panel</button></div> -->
+<a routerLink="/admin-panel" routerLinkActive="active">Admin</a>
+<h1>
+  <img width="50" alt="AXS Logo" src="../assets/axs_coat.png"> AXSVOTE
+  <img width="50" alt="AXS Logo" src="../assets/axs_coat.png">
+</h1>
+<router-outlet></router-outlet>
+<app-vote-form></app-vote-form>

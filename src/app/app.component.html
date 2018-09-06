@@ -1,29 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <!-- <h1>
-    Welcome to {{ title }}!
-  </h1> -->
-  <!-- <button class = "admin-nav">Admin  -->
-  <!-- <div class="main-container">
-    <mat-form-field>
-      <input matInput placeholder="Name">
-    </mat-form-field>
+<head>
+
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB_k2feMS0FfWMS-whdjhraC2S7k4GxEhk",
+    authDomain: "axsvote.firebaseapp.com",
+    databaseURL: "https://axsvote.firebaseio.com",
+    projectId: "axsvote",
+    storageBucket: "",
+    messagingSenderId: "881687428426"
+  };
+  firebase.initializeApp(config);
+</script>
+</head><!-- <div style="text-align:center">
+
+  <img width="100px" alt="AXS Logo" src="../assets/axs_coat.png">
+  <app-vote-form></app-vote-form> -->
+  <router-outlet></router-outlet>
   
-    <mat-form-field>
-      <input matInput placeholder="Subject">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-select placeholder="Type">
-        <mat-option value="Positive">Positive</mat-option>
-        <mat-option value="Negative">Negative</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-stroked-button (click)="postData()">Submit</button>
-  </div> -->
-  <div><button class = "admin-nav" (click) = "adminRoute()">Admin Panel</button></div> 
-  <img width="300" alt="AXS Logo" src="../assets/axs_coat.png">
-  <app-vote-form></app-vote-form>
-
-
-

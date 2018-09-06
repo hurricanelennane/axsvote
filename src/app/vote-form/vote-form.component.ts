@@ -9,7 +9,7 @@ import { componentRefresh } from '@angular/core/src/render3/instructions';
   styleUrls: ['./vote-form.component.css']
 })
 export class VoteFormComponent implements OnInit {
-  model = new Vote("", "", "")
+  model = new Vote("", "", "", "")
   submitted = false;
   constructor() { }
   onSubmit() {
@@ -18,8 +18,6 @@ export class VoteFormComponent implements OnInit {
     //this.model.reset();
   }
   ngOnInit() {
-    //this.postData
-    //console.log(new Vote(1,"Zach Lennane", "The booty is mine - it belongs to me", "Postiive"));
   }
   public postData = function (name, subject, type) {
     console.log("PostData")

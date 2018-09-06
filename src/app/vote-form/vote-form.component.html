@@ -1,26 +1,33 @@
-
-<h1>Vote Form</h1>
+<h1>
+  Vote Form</h1>
 <div class="main-container">
-  <form (ngSubmit) = "onSubmit()" #voteForm = "ngForm">
-  <mat-form-field>
-    <input matInput placeholder="Name" required [(ngModel)]="model.name" name = "name">
-    <!-- TODO REMOVE {{model.name}} -->
-    
-  </mat-form-field>
+  <form (ngSubmit)="onSubmit()" #voteForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Name" required [(ngModel)]="model.name" name="name">
+      <!-- TODO REMOVE {{model.name}} -->
 
-  <mat-form-field>
-    <input matInput placeholder="Subject" [(ngModel)]="model.subject" name = "subject">
-    <!-- TODO REMOVE {{model.subject}} -->
-  </mat-form-field>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-select placeholder="Type" required [(ngModel)]="model.type" name = "type">
-      <mat-option value="Positive">Positive</mat-option>
-      <mat-option value="Negative">Negative</mat-option>
-    </mat-select>
-  <!-- TODO REMOVE{{model.type}} -->
-  </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Subject" [(ngModel)]="model.subject" name="subject">
+      <!-- TODO REMOVE {{model.subject}} -->
+    </mat-form-field>
 
-<button type ="submit" class="btn btn-primary" mat-stroked-button (click)="postData(model.name,model.subject,model.type); voteForm.reset()">Submit</button>
-</form>
+    <mat-form-field>
+      <mat-select placeholder="Type" required [(ngModel)]="model.type" name="type">
+        <mat-option value="Positive">Positive</mat-option>
+        <mat-option value="Negative">Negative</mat-option>
+        <mat-option value="Negative">Neutral</mat-option>
+        <mat-option value="Response">Response</mat-option>
+      </mat-select>
+      <!-- TODO REMOVE{{model.type}} -->
+    </mat-form-field>
+    <!-- <div [hidden]="isResponse"> -->
+    <mat-form-field>
+      <!-- TODO: Make this dissapear if they aren't hitting type == response -->
+      <div><input matInput placeholder="Responding To:" name="response"></div>
+    </mat-form-field>
+    <!-- </div> -->
+    <button type="submit" [disabled]="!voteForm.valid" class="btn btn-primary" mat-stroked-button (click)="postData(model.name,model.subject,model.type); voteForm.reset()">Submit</button>
+  </form>
 </div>
