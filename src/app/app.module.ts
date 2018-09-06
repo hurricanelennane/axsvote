@@ -16,12 +16,14 @@ import { HomePanelComponent } from './home-panel/home-panel.component';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { AuthGuard } from './auth-guard.service';
+import { AdminModule } from './admin/admin.module';
+import { AdminComponent } from './admin/admin.component';
 // import { AdminRoutingModule } from './admin/admin-routing.module';
 
 const appRoutes: Routes = [
   { path: 'admin-panel', component: AdminPanelComponent, canLoad: [AuthGuard]},
   { path: 'home', component:  HomePanelComponent},
-  // { path: 'login', component: LoginRoutingModule},
+  { path: 'login', component: LoginRoutingModule},
   { path: '', redirectTo : '/home', pathMatch:'full'}
   /* These are examples  */
   // { path: 'hero/:id',      component: HeroDetailComponent },
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     VoteFormComponent,
     AdminPanelComponent,
     HomePanelComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
